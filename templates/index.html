@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Real Estate Price Predictor - Pakistan</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+  <nav>
+    <a href="{{ url_for('home') }}">🏠 Home</a>
+    <a href="{{ url_for('predict') }}">📈 Predict Price</a>
+    <a href="{{ url_for('analysis') }}">📊 Data Analysis</a>
+  </nav>
+
+  <div class="container">
+    <h2>Welcome to Pakistan Real Estate Price Predictor</h2>
+
+    <p style="margin-top: 20px; line-height: 1.6;">
+      This application uses real-world real estate data of Pakistan (2023) to estimate property prices using a machine learning model.
+      Whether you're buying, selling, or just curious about property trends, this tool can give you a realistic price prediction based on your input.
+    </p>
+
+    <h3 style="margin-top: 30px; color: #0077b6;">📊 About the Dataset</h3>
+    <p style="line-height: 1.6;">
+      The dataset includes thousands of listings collected from various cities across Pakistan. Key features used to train the model include:
+    </p>
+    <ul style="padding-left: 20px; line-height: 1.8;">
+      <li><strong>City</strong> – Location of the property (e.g., Lahore, Karachi, Islamabad)</li>
+      <li><strong>Property Type</strong> – House, Plot, Flat</li>
+      <li><strong>Purpose</strong> – For Sale or Rent</li>
+      <li><strong>Area (in Marla)</strong> – The size of the property</li>
+      <li><strong>Bedrooms & Bathrooms</strong> – Room and bath count</li>
+      <li><strong>Price</strong> – The actual listed price</li>
+      <a href="/static/house_prices.csv" download>📄 Download dataset</a>
+
+    </ul>
+
+    <h3 style="margin-top: 30px; color: #0077b6;">⚙️ Model Overview</h3>
+    <p style="line-height: 1.6;">
+      The model applies feature engineering, log transformation, and linear regression to predict prices. It has been trained on cleaned and preprocessed data with R² score of approximately <strong>0.82</strong>.
+    </p>
+
+    <div style="margin-top: 40px; text-align: center;">
+      <a href="{{ url_for('predict') }}">
+        <button style="background-color: #0096c7;">🚀 Start Predicting</button>
+      </a>
+    </div>
+  </div>
+
+</body>
+</html>
